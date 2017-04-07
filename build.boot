@@ -5,7 +5,7 @@
  :source-paths #{"src"}
  :dependencies '[[adzerk/bootlaces "0.1.13" :scope "test"]])
 
-(require '[adzerk.bootlaces :refer [build-jar push-release]]
+(require '[adzerk.bootlaces :refer :all]
          '[adamrenklint.boot-autofmt :refer [autofmt]])
 
 (bootlaces! version)
