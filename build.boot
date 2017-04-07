@@ -3,11 +3,9 @@
 
 (set-env!
  :source-paths #{"src"}
- :dependencies '[[org.clojure/clojurescript   "1.9.494"]
-                 [adzerk/bootlaces            "0.1.13" :scope "test"]])
+ :dependencies '[[adzerk/bootlaces "0.1.13" :scope "test"]])
 
-(require '[adzerk.bootlaces :refer :all]
-         '[boot.git :as git]
+(require '[adzerk.bootlaces :refer [build-jar push-release]]
          '[adamrenklint.boot-autofmt :refer [autofmt]])
 
 (bootlaces! version)
