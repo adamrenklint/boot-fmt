@@ -2,8 +2,6 @@
   {:boot/export-tasks true}
   (:require [boot.core :as core]))
 
-(core/merge-env! :dependencies '[[cljfmt "0.3.0"]])
-
 (core/deftask autofmt
   "Format files in :source-paths using cljfmt"
   []
