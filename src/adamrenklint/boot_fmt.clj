@@ -1,8 +1,8 @@
-(ns adamrenklint.boot-autofmt
+(ns adamrenklint.boot-fmt
   {:boot/export-tasks true}
   (:require [boot.core :as core]))
 
-(core/deftask autofmt
+(core/deftask fmt
   "Format files in :source-paths using cljfmt"
   []
   (require 'cljfmt.core 'clojure.java.io)
