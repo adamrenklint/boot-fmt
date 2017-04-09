@@ -1,9 +1,9 @@
 (def project 'adamrenklint/boot-fmt)
-(def version "1.0.0")
+(def version "1.1.0")
 
 (set-env!
  :source-paths #{"src"}
- :dependencies '[[cljfmt "0.3.0"]
+ :dependencies '[[cljfmt "0.5.6"]
                  [adzerk/bootlaces "0.1.13" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]

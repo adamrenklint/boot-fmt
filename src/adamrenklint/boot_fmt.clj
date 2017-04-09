@@ -10,7 +10,7 @@
     (let [reformat-string (resolve 'cljfmt.core/reformat-string)
           file (resolve 'clojure.java.io/file)
           fmt-file (fn [f]
-                     (println "Formatting" (.getName f))
+                     (println "Formatting" (.getPath f))
                      (spit f (reformat-string (slurp f))))
           clj-file? (fn [f]
                       (and (.exists f) (.isFile f) (not (.isHidden f))

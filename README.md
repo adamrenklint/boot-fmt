@@ -5,7 +5,7 @@ Boot task to automatically fix Clojure(Script) syntax formatting with cljfmt
 [![CircleCI](https://circleci.com/gh/adamrenklint/boot-fmt.svg?style=svg)](https://circleci.com/gh/adamrenklint/boot-fmt)
 
 ```clojure
-[adamrenklint/boot-fmt "1.0.0"] ;; latest release
+[adamrenklint/boot-fmt "1.1.0"] ;; latest release
 ```
 
 ## Usage
