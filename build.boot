@@ -1,5 +1,5 @@
 (def project 'adamrenklint/boot-fmt)
-(def version "1.2.0")
+(def version "1.2.1")
 
 (set-env!
  :source-paths #{"src"}
@@ -17,8 +17,8 @@
 
 (deftask release []
   (comp (build-jar)
-        (push-release)))
-        ; (dosh "git" "push" "--tags")))
+        (push-release)
+        (with-pass-thru _ (dosh "git" "push" "--tags"))))
 
 (deftask check []
   (comp (check/with-yagni)
@@ -27,9 +27,7 @@
         (check/with-bikeshed)))
 
 (deftask format []
-  (fmt :indents '{deftask [[:inner 0]]
-                  doseq   [[:inner 0]]
-                  when    [[:inner 0]]}))
+  (fmt :indents '{foo [[:block 1]]}))
 
 (task-options!
   pom {:project     project
