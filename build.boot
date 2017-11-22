@@ -1,20 +1,35 @@
 (def project 'adamrenklint/boot-fmt)
-(def version "1.1.0")
+(def version "1.2.0")
 
 (set-env!
  :source-paths #{"src"}
- :dependencies '[[cljfmt "0.5.6"]
-                 [adzerk/bootlaces "0.1.13" :scope "test"]])
+ :dependencies '[[cljfmt "0.5.7"]
+                 [adzerk/bootlaces "0.1.13" :scope "test"]
+                 [tolitius/boot-check "0.1.6" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
-         '[adamrenklint.boot-fmt :refer [fmt]])
+         '[adamrenklint.boot-fmt :refer [fmt]]
+         '[tolitius.boot-check :as check])
 
 (bootlaces! version)
+
+(ns-unmap 'boot.user 'format)
 
 (deftask release []
   (comp (build-jar)
         (push-release)
         (dosh "git" "push" "--tags")))
+
+(deftask check []
+  (comp (check/with-yagni)
+        (check/with-eastwood)
+        (check/with-kibit)
+        (check/with-bikeshed)))
+        
+(deftask format []
+  (fmt :indents '{deftask [[:inner 0]]
+                  doseq   [[:inner 0]]
+                  when    [[:inner 0]]}))
 
 (task-options!
   pom {:project     project
