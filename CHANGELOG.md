@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.0 - 2017-11-22
+
+- Make `fmt` task work with `watch`
+
 ## v1.2.0 - 2017-11-22
 
 - Update [cljfmt](github.com/weavejester/cljfmt) to v0.5.7

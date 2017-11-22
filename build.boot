@@ -1,5 +1,5 @@
 (def project 'adamrenklint/boot-fmt)
-(def version "1.2.1")
+(def version "1.3.0")
 
 (set-env!
  :source-paths #{"src"}
