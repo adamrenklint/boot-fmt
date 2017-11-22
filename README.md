@@ -15,6 +15,10 @@ $ boot fmt
 Formatting boot_fmt.clj
 ```
 
+## Using custom `:indents` rules
+
+See example of [custom indentation rules](https://github.com/weavejester/cljfmt#indentation-rules) in [build.boot](https://github.com/adamrenklint/boot-fmt/blob/master/build.boot#L29)
+
 ## License
 
 Copyright (c) 2017 [Adam Renklint](http://adamrenklint.com)

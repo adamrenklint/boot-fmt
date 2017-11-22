@@ -17,15 +17,15 @@
 
 (deftask release []
   (comp (build-jar)
-        (push-release)
-        (dosh "git" "push" "--tags")))
+        (push-release)))
+        ; (dosh "git" "push" "--tags")))
 
 (deftask check []
   (comp (check/with-yagni)
         (check/with-eastwood)
         (check/with-kibit)
         (check/with-bikeshed)))
-        
+
 (deftask format []
   (fmt :indents '{deftask [[:inner 0]]
                   doseq   [[:inner 0]]
